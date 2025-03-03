@@ -17,7 +17,7 @@ export default function VoiceRecorder({ handleSetText }) {
         if (event.data.size > 0) {
           chunksRef.current.push(event.data);
         }
-    };
+      };
 
       mediaRecorderRef.current.onstop = () => {
         const audioBlob = new Blob(chunksRef.current, {
@@ -30,39 +30,38 @@ export default function VoiceRecorder({ handleSetText }) {
           setAudioBase64(base64Audio.split(",")[1]);
           const formData = new FormData();
           formData.append("audio", base64Audio.split(",")[1]);
-          const response = await fetch ("/api/transcribe", {
-          method: "POST",
-          body: formData
+          const response = await fetch("/api/transcribe", {
+            method: "POST",
+            body: formData,
           });
           const result = await response.json();
           console.log("Audio uploaded successfully", result);
           handleSetText(result.result);
         };
         chunksRef.current = [];
-    };
+      };
 
       mediaRecorderRef.current.start();
       setIsRecording(true);
     } catch (error) {
       console.error("Error accessing microphone", error);
     }
-};
+  };
 
   const stopRecording = async () => {
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
     }
-};
+  };
 
   const toggleRecording = () => {
     if (isRecording) {
-      // stop recording
       stopRecording();
     } else {
       startRecording();
     }
-};
+  };
 
   return (
     <div className="flex items-center p-4">
@@ -82,5 +81,5 @@ export default function VoiceRecorder({ handleSetText }) {
         aria-label="Recorded audio"
       />
     </div>
-    );
+  );
 }
