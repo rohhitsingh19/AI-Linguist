@@ -9,10 +9,10 @@ export const Header = () => {
       {" "}
       <div className="w-full max-w-screen-xl px-2 5 lg:px-20 relative mx-auto border-b">
         <div className="flex h-14 items-center justify-between">
-          <div className="flex flex-wrap text-black py-2"> <BookA className="w-7 h-6 text-blue-900" /> AI Linguist</div>
+          <div className="flex flex-wrap text-blue-800 py-2 text-2xl font-serif font-bold"> <BookA className="w-7 h-8 p-1 text-blue-900" /> AI Linguist </div>
           <SignedOut>
             <SignInButton>
-              <button className="bg-blue-700 text-white px-2 py-2 rounded-md">Sign In</button>
+              <button className="bg-blue-700 text-white px-2 py-2 rounded-md hover:bg-blue-900 transition-colors duration-300">Sign In</button>
             </SignInButton>
           </SignedOut>
           <SignedIn>

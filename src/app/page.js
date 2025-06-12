@@ -56,16 +56,16 @@ export default function Home() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+  <section className="py-20 px-4 sm:px-6 w-full mx-auto bg-slate-300">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-5xl md:text-6xl">
-          AI <span className="text-blue-900">linguist</span>
+        <h1 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-5xl md:text-6xl font-serif">
+          AI <span className="text-blue-900">Linguist</span>
         </h1>
-        <p className="mt-4 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+        <p className="mt-4 max-w-md mx-auto text-base text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl font-serif">
           Break language barriers instantly with our powerful translation app. Try it now!
         </p>
       </div>
-      <div className="bg-white shadow-xl rounded-lg p-6 max-w-3xl mx-auto">
+      <div className="bg-slate-500 shadow-xl rounded-lg p-6 max-w-3xl mx-auto ">
         <div className="grid grid-rows-[20px_1fr_20px] items-start justify-items-center p-2 pb-2 gap-4 sm:p-6 font-[family-name:var(--font-geist-sans)]">
           <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
             <form
@@ -78,7 +78,7 @@ export default function Home() {
                 }
               }}
             >
-              <div className="flex flex-row gap-4">
+              <div className="flex flex-row gap-4 flex-wrap justify-between items-start">
                 <div className="container flex flex-col">
                   <Dropdown
                     name="languageFrom"
@@ -88,14 +88,14 @@ export default function Home() {
                   />
                   <textarea
                     placeholder="Enter text to translate"
-                    className="border border-slate-800 rounded-md p-4"
+                    className="border border-slate-800 rounded-md p-4 text-gray-700"
                     value={inputText}
                     name="text"
                     required
                     onChange={handleInputChange}
                   />
                 </div>
-                <div className="container flex flex-col">
+                <div className="container flex flex-col ">
                   <div className="justify-between flex">
                     <Dropdown
                       name="languageTo"
@@ -114,7 +114,7 @@ export default function Home() {
                   </div>
                   <textarea
                     placeholder="Translated text will appear here"
-                    className="border border-slate-800 rounded-md p-4"
+                    className="border border-slate-800 rounded-md p-4 text-blue-700"
                     value={translatedText}
                     readOnly
                   />
@@ -123,7 +123,7 @@ export default function Home() {
               <div className="flex flex-row items-center gap-2 h-16">
                 <button
                   type="submit"
-                  className="p-2  rounded-md bg-slate-800 text-white"
+                  className="p-2  rounded-md bg-slate-800 text-blue-100 hover:bg-blue-900 transition-colors duration-300"
                 >
                   translate
                 </button>
